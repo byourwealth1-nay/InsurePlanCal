@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict');
-const {quote}=require('../calculator');
+const {quote,validateSelection}=require('../calculator');
 const products=require('../data/products.json');
 const old=require('../data/legacy-rates.json');
 const byId=id=>products.find(p=>p.id===id);
@@ -48,3 +48,11 @@ assert.throws(()=>q('cancer','M',57,150000));
 assert.throws(()=>q('5pay10','M',40,1000001));
 for(const sum of [499999,500000,699999,700000])assert.equal(quote(byId('payplus20'),{sex:'M',age:57,amount:sum}).discount,sum>=700000?1.5:sum>=500000?1:0);
 console.log(`PASS: ${checks} age/sex/plan combinations, brochure examples, units, thresholds, and rejected inputs`);
+
+// Benefit Plus p46 explicitly prohibits riders on 5 Pay 10.
+assert.throws(()=>validateSelection(byId('5pay10'),[byId('5pay10'),byId('happy')]));
+assert.throws(()=>validateSelection(byId('5pay10'),[byId('5pay10'),byId('tpd')]));
+assert.doesNotThrow(()=>validateSelection(byId('5pay10'),[byId('5pay10')]));
+assert.doesNotThrow(()=>validateSelection(null,[byId('happy')]));
+assert.doesNotThrow(()=>validateSelection(byId('payplus20'),[byId('payplus20'),byId('happy')]));
+console.log('PASS: Benefit Plus 5 Pay 10 rider restrictions');
