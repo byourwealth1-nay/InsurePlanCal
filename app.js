@@ -34,6 +34,7 @@ function update(){
   const row=document.createElement('div');row.className='row';const label=document.createElement('div'),price=document.createElement('strong');label.textContent=description;price.textContent=text;row.append(label,price);$('summaryRows').append(row);
   if(!used.has(item.p.source.url)){used.add(item.p.source.url);const a=document.createElement('a');a.textContent=item.p.source.title;a.href=item.p.source.url;a.target='_blank';a.rel='noopener';const para=document.createElement('p');para.append(a);$('sources').append(para);}
  }
+ try{InsureCalculator.validateSelection(main,items.map(item=>item.p));}catch(e){errors.push(e.message);}
  if(main&&(main.id.startsWith('annuity')||main.id==='senior')&&(health||items.some(i=>i.p.category==='rider')))errors.push(main.name+': การแนบรายการที่เลือกยังไม่รองรับ กรุณาคำนวณรายตัวโดยเลือก “ไม่เลือกแบบหลัก”');
  $('error').classList.toggle('hide',errors.length===0);$('error').textContent=[...new Set(errors)].join(' · ');$('total').textContent=errors.length?'—':fmt(cents/100);
  if(!errors.length){$('copy').disabled=false;lastSummary=['InsurePlanCal · ประเมินเบี้ยมาตรฐาน',$('person').textContent,...lines,'รวมรายการที่เลือก '+fmt(cents/100)+' บาท/ปี','ยังไม่ยืนยันการแนบสัญญาร่วมกัน / อัตราปัจจุบัน · ไม่รวม Vitality และเบี้ยเพิ่ม','แหล่งข้อมูล:',...[...used]].join('\n');}
