@@ -35,6 +35,7 @@ for(const sex of ['M','F'])assert.deepEqual(byId('payplus20').rates[sex],old['pa
 let checks=0;
 // Every accepted new-business age and sex/plan must have a valid quote; reject adjacent ages.
 for(const p of products){
+ if(p.waiverType||p.quoteMode)continue;
  for(const sex of p.sexOnly?[p.sexOnly]:['M','F'])for(let age=p.minAge;age<=p.maxAge;age++)for(const plan of p.plans||[{id:undefined}]){
   const premium=q(p.id,sex,age,p.minAmount,plan.id);assert.ok(Number.isFinite(premium)&&premium>0);checks++;
  }
@@ -80,3 +81,42 @@ assert.throws(()=>validateSelection(null,[byId('ciplus'),byId('citopup')],[{p:by
 assert.doesNotThrow(()=>validateSelection(null,[byId('ciplus'),byId('citopup')],[{p:byId('ciplus'),amount:100000},{p:byId('citopup'),amount:40000}]));
 assert.throws(()=>validateSelection(null,[byId('ai'),byId('aircc')]));
 console.log('PASS: additional main/PPR source examples and dependency restrictions');
+
+const {linkedAmount,paymentTerm}=require('../calculator');
+const main=byId('pay10');
+function w(id,sex,age,payerSex,payerAge,base=main,mainAmount=300000){return quote(byId(id),{sex,age,payerSex,payerAge,main:base,mainAmount,infantConfirmed:true});}
+assert.equal(w('pb','M',0,'M',30).rate,3.08);
+assert.equal(w('pb','M',0,'M',30).premium,204.57);
+assert.equal(w('pb','M',0,'F',30).rate,.88);
+assert.equal(w('pb','M',0,'F',30).premium,58.45);
+assert.equal(w('pbci','M',0,'M',30).rate,3.03);
+assert.equal(w('pbci','F',15,'M',30).years,10);
+assert.equal(w('pbci','F',0,'M',70,{...main,paymentYears:20}).years,10);
+assert.equal(w('wpci','M',35,undefined,undefined).rate,11.9);
+assert.throws(()=>w('wpci','M',35,undefined,undefined,byId('payplus20'),150000));
+assert.throws(()=>w('wpci','M',35,undefined,undefined,{...main,paymentYears:9}));
+assert.throws(()=>w('pb','M',0,'M',19));
+assert.throws(()=>w('pb','M',16,'M',30));
+assert.throws(()=>w('pbci','M',0,'M',71));
+assert.throws(()=>w('pb','M',0,'M',50,{...main,paymentYears:20}));
+assert.throws(()=>quote(byId('pb'),{sex:'M',age:0,payerSex:'M',payerAge:30,infantConfirmed:true}));
+assert.equal(paymentTerm(byId('excellent'),35),20);
+assert.equal(paymentTerm(byId('protector80'),57),23);
+assert.equal(quote(byId('wp'),{sex:'M',age:35,manualPremium:0}).premium,0);
+assert.equal(quote(byId('wp'),{sex:'F',age:35,manualPremium:99.12}).premium,99.12);
+for(const manualPremium of [undefined,NaN,-1,Infinity,1.001])assert.throws(()=>quote(byId('wp'),{sex:'M',age:35,manualPremium}));
+assert.equal(q('healthcancer','M',57,undefined,'standard'),11167);
+assert.equal(q('healthcancer','F',67,undefined,'nonsmoker'),17500);
+assert.equal(q('healthcancer','M',35,undefined,'nonsmoker'),1314);
+for(const amount of [100000,250000,500000])assert.equal(linkedAmount(byId('citopup'),[{p:byId('ciplus'),amount}]),amount*.4);
+assert.throws(()=>linkedAmount(byId('citopup'),[]));
+assert.throws(()=>linkedAmount(byId('citopup'),[{p:byId('ciplus'),amount:NaN}]));
+let waiverChecks=0;
+for(const p of products.filter(p=>p.waiverType))for(const sex of ['M','F'])for(const [term,rates] of Object.entries(p.waiverRates[sex]))for(let i=0;i<rates.length;i++){
+ if(rates[i]===null)continue;
+ const payerAge=p.waiverType==='payer'?p.payerBands[i]:undefined;
+ const age=p.waiverType==='payer'?0:[20,25,30,35,40,45,50,55,60,65,70,75][i];
+ const q=w(p.id,sex,age,sex,payerAge,{...main,paymentYears:Number(term),maxAge:75,bands:[75],rates:{M:[22.14],F:[17.71]}});
+ assert.equal(q.rate,rates[i]);assert.equal(q.years,Number(term));assert.ok(Number.isFinite(q.premium));waiverChecks++;
+}
+console.log(`PASS: ${waiverChecks} printed waiver rate cells, payer/insured separation, linked CI capital, manual WP and missing-rate rejection`);
