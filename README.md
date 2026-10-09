@@ -41,3 +41,7 @@ node --check app.js
 นำเข้าตารางอีกครั้งด้วย `python scripts/import-rates.py /path/to/sources.json` ใช้ mapping คอลัมน์ที่กำหนดชัดเจนและตรวจจำนวนค่า ห้ามเพิ่มผลิตภัณฑ์ด้วยการเดาโครงสร้างตาราง
 
 เผยแพร่ static assets โดยคัดลอก index.html, app.js, calculator.js และ JSON ข้อมูลที่ใช้แสดงผลไปยัง dist
+
+## ตรวจเทียบ Benefit Plus
+
+ตรวจ 14 แบบ/ระยะชำระ รวม 1,362 ค่าเพศ/ช่วงอายุ อัตราตรงกันทั้งหมด ดู AUDIT-BENEFIT-PLUS.md สำหรับขอบเขตและรายละเอียด เพิ่มการปฏิเสธการแนบสัญญาเพิ่มเติมกับ 5 Pay 10 และแสดงเงื่อนไขทุนรวม Senior Happy
