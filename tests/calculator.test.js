@@ -35,7 +35,7 @@ for(const sex of ['M','F'])assert.deepEqual(byId('payplus20').rates[sex],old['pa
 let checks=0;
 // Every accepted new-business age and sex/plan must have a valid quote; reject adjacent ages.
 for(const p of products){
- for(const sex of ['M','F'])for(let age=p.minAge;age<=p.maxAge;age++)for(const plan of p.plans||[{id:undefined}]){
+ for(const sex of p.sexOnly?[p.sexOnly]:['M','F'])for(let age=p.minAge;age<=p.maxAge;age++)for(const plan of p.plans||[{id:undefined}]){
   const premium=q(p.id,sex,age,p.minAmount,plan.id);assert.ok(Number.isFinite(premium)&&premium>0);checks++;
  }
  for(const age of [p.minAge-1,p.maxAge+1,NaN,57.5])assert.throws(()=>quote(p,{sex:'M',age,amount:p.minAmount,plan:p.plans?.[0].id,infantConfirmed:true}));
@@ -56,3 +56,27 @@ assert.doesNotThrow(()=>validateSelection(byId('5pay10'),[byId('5pay10')]));
 assert.doesNotThrow(()=>validateSelection(null,[byId('happy')]));
 assert.doesNotThrow(()=>validateSelection(byId('payplus20'),[byId('payplus20'),byId('happy')]));
 console.log('PASS: Benefit Plus 5 Pay 10 rider restrictions');
+
+assert.equal(q('happykids','M',5,undefined,'10000-15'),104700);
+assert.equal(q('happykids','F',5,undefined,'10000-15'),88500);
+assert.equal(q('happykids','M',6,undefined,'30000-15'),40500);
+assert.equal(q('happykids','F',6,undefined,'30000-15'),29700);
+assert.equal(q('term20','M',20,350000),1596);
+assert.equal(q('excellent','M',35,250000),37975);
+assert.equal(q('legacy10','M',0,20000000),399600);
+assert.equal(q('legacy10','M',0,19999999),420599.98);
+assert.equal(q('ciprocare','M',0,200000),7104);
+assert.equal(q('cisuperprestige10','M',0,5000000),179450);
+assert.equal(q('ai','M',40,100000,'4'),900);
+assert.equal(q('aircc','M',40,100000,'4'),1025);
+assert.equal(q('adb','F',40,100000,'2'),150);
+assert.equal(q('citopup','M',35,40000),66);
+assert.equal(q('hs','M',11,undefined,'1000'),4030);
+assert.equal(q('hsextra','M',11,undefined,'1500'),7370);
+assert.equal(q('hb','M',16,1000,'4'),2250);
+assert.throws(()=>q('ladycare','M',20,100000));
+assert.throws(()=>validateSelection(null,[byId('citopup')]));
+assert.throws(()=>validateSelection(null,[byId('ciplus'),byId('citopup')],[{p:byId('ciplus'),amount:100000},{p:byId('citopup'),amount:39000}]));
+assert.doesNotThrow(()=>validateSelection(null,[byId('ciplus'),byId('citopup')],[{p:byId('ciplus'),amount:100000},{p:byId('citopup'),amount:40000}]));
+assert.throws(()=>validateSelection(null,[byId('ai'),byId('aircc')]));
+console.log('PASS: additional main/PPR source examples and dependency restrictions');
