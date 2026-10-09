@@ -1,4 +1,4 @@
-name: Publish calculator to GitHub Pages
+name: Test and publish InsurePlanCal
 on:
   push:
     branches: [main]
