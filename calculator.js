@@ -20,5 +20,8 @@ function quote(product,{sex,age,amount,plan,infantConfirmed=false}){
  if(!Number.isFinite(raw)||raw<=0)throw Error('ไม่สามารถคำนวณเบี้ยได้');
  return {premium:Math.round((raw+Number.EPSILON)*100)/100,rate,discount,source:product.source};
 }
-const api={quote};if(typeof module!=='undefined')module.exports=api;else root.InsureCalculator=api;
+function validateSelection(main,selected){
+ if(main?.id==='5pay10'&&selected.some(p=>p.category==='health'||p.category==='rider'))throw Error('5 Pay 10 ไม่สามารถแนบสัญญาเพิ่มเติมได้ กรุณาแยกคำนวณแต่ละรายการ');
+}
+const api={quote,validateSelection};if(typeof module!=='undefined')module.exports=api;else root.InsureCalculator=api;
 })(globalThis);
