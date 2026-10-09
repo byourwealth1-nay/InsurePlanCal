@@ -1,0 +1,86 @@
+[
+  {
+    "id": "pay10",
+    "name": "10 Pay Life (Non Par)",
+    "compared": 132,
+    "differences": []
+  },
+  {
+    "id": "pay15",
+    "name": "15 Pay Life (Non Par)",
+    "compared": 132,
+    "differences": []
+  },
+  {
+    "id": "payplus10",
+    "name": "Pay Life Plus · 10 Pay",
+    "compared": 152,
+    "differences": []
+  },
+  {
+    "id": "payplus15",
+    "name": "Pay Life Plus · 15 Pay",
+    "compared": 152,
+    "differences": []
+  },
+  {
+    "id": "payplus20",
+    "name": "Pay Life Plus · 20 Pay",
+    "compared": 152,
+    "differences": []
+  },
+  {
+    "id": "pay20",
+    "name": "20 Pay Life (Non Par)",
+    "compared": 142,
+    "differences": []
+  },
+  {
+    "id": "protection65",
+    "name": "Protection 65",
+    "compared": 122,
+    "differences": []
+  },
+  {
+    "id": "savingsure",
+    "name": "Saving Sure",
+    "compared": 102,
+    "differences": []
+  },
+  {
+    "id": "senior",
+    "name": "Senior Happy",
+    "compared": 42,
+    "differences": []
+  },
+  {
+    "id": "annuityfix",
+    "name": "Annuity Fix",
+    "compared": 72,
+    "differences": []
+  },
+  {
+    "id": "annuitysure9",
+    "name": "Annuity Sure · 9 Pay",
+    "compared": 62,
+    "differences": []
+  },
+  {
+    "id": "annuitysure60",
+    "name": "Annuity Sure · ชำระถึงอายุ 60",
+    "compared": 72,
+    "differences": []
+  },
+  {
+    "id": "5pay10",
+    "name": "5 Pay 10 (Non Par)",
+    "compared": 6,
+    "differences": []
+  },
+  {
+    "id": "endowment",
+    "name": "Endowment 15/25",
+    "compared": 22,
+    "differences": []
+  }
+]
