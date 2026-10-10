@@ -137,3 +137,13 @@ for(const id of ['annuityfix','annuitysure9','annuitysure60']){
 for(const id of ['wp','wpci','pb','pbci'])assert(calc.riderRestriction(products.find(p=>p.id==='ciprocare'),products.find(p=>p.id===id)));
 assert.equal(calc.riderRestriction(null,products.find(p=>p.id==='happy')),'');
 console.log('PASS: main policy rider eligibility matrix and standalone calculation');
+
+for(const id of ['cisuper10','cisuper20','cisuperprestige10','cisuperprestige20']){
+ const main=byId(id);
+ for(const rider of products.filter(p=>p.category!=='main')){
+  const allowed=!!rider.accidentFamily||(id.includes('prestige')&&rider.id==='ciplus');
+  assert.equal(!calc.riderRestriction(main,rider),allowed,id+' / '+rider.id);
+  if(!allowed)assert.throws(()=>validateSelection(main,[rider]));
+ }
+}
+console.log('PASS: SuperCare and Prestige explicit rider allowlists');

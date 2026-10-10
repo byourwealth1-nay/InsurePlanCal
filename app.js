@@ -32,7 +32,7 @@ function syncRiderOptions(){
  for(const select of document.querySelectorAll('.rider-product')){const value=select.value;addOptions(select);select.value=value;}
  const available=products.some(p=>p.category!=='main'&&!InsureCalculator.riderRestriction(main,p));
  $('addRider').disabled=!available;
- $('riderPolicy').textContent=!available?main.name+' ไม่สามารถแนบสัญญาเพิ่มเติมได้':main?.id.startsWith('annuity')?'แบบบำนาญนี้แนบได้เฉพาะ AI / ADD / ADB และ RCC':main?.id==='ciprocare'?'CI ProCare ไม่สามารถแนบ WP / WPCI / PB / PBCI ได้':'รายการที่เลือกได้กรองตามข้อจำกัดของกรมธรรม์หลักแล้ว';
+ $('riderPolicy').textContent=!available?main.name+' ไม่สามารถแนบสัญญาเพิ่มเติมได้':main?.id.startsWith('annuity')?'แบบบำนาญนี้แนบได้เฉพาะ AI / ADD / ADB และ RCC':['cisuper10','cisuper20'].includes(main?.id)?'CI SuperCare แนบได้เฉพาะ AI / ADD / ADB และ RCC':['cisuperprestige10','cisuperprestige20'].includes(main?.id)?'CI SuperCare Prestige แนบได้เฉพาะอุบัติเหตุและ CI Plus':main?.id==='ciprocare'?'CI ProCare ไม่สามารถแนบ WP / WPCI / PB / PBCI ได้':'รายการที่เลือกได้กรองตามข้อจำกัดของกรมธรรม์หลักแล้ว';
  return removed;
 }
 function hint(p){return p?`อายุรับใหม่ ${p.minAge}–${p.maxAge} ปี${p.unit&&!p.waiverType?` · จำนวนเงินตั้งแต่ ${fmt(p.minAmount)}${p.maxAmount===null?'':` ถึง ${fmt(p.maxAmount)}`} บาท`:''}${p.note?' · '+p.note:''}`:'';}

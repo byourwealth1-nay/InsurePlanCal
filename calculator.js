@@ -55,6 +55,8 @@ function riderRestriction(main,rider){
  if(!main||rider.category==='main')return '';
  if(['5pay10','senior'].includes(main.id))return main.name+' ไม่สามารถแนบสัญญาเพิ่มเติมได้';
  if(main.id.startsWith('annuity')&&!rider.accidentFamily)return main.name+' แนบได้เฉพาะสัญญาอุบัติเหตุ AI / ADD / ADB และ RCC';
+ if(['cisuper10','cisuper20'].includes(main.id)&&!rider.accidentFamily)return main.name+' แนบได้เฉพาะสัญญาอุบัติเหตุ AI / ADD / ADB และ RCC';
+ if(['cisuperprestige10','cisuperprestige20'].includes(main.id)&&!rider.accidentFamily&&rider.id!=='ciplus')return main.name+' แนบได้เฉพาะสัญญาอุบัติเหตุและ CI Plus';
  if(main.id==='ciprocare'&&['wp','wpci','pb','pbci'].includes(rider.id))return main.name+' ไม่สามารถแนบ WP / WPCI / PB / PBCI ได้';
  if(main.includedRiders?.includes(rider.id))return main.name+' รวม '+rider.name+' ในแบบแล้ว ไม่ต้องเพิ่มซ้ำ';
  return '';
