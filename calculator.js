@@ -51,14 +51,22 @@ function quote(product,{sex,age,amount,plan,infantConfirmed=false,payerSex,payer
  if(!Number.isFinite(raw)||raw<=0)throw Error('ไม่สามารถคำนวณเบี้ยได้');
  return {premium:round(raw),rate,discount,source:product.source};
 }
+function riderRestriction(main,rider){
+ if(!main||rider.category==='main')return '';
+ if(['5pay10','senior'].includes(main.id))return main.name+' ไม่สามารถแนบสัญญาเพิ่มเติมได้';
+ if(main.id.startsWith('annuity')&&!rider.accidentFamily)return main.name+' แนบได้เฉพาะสัญญาอุบัติเหตุ AI / ADD / ADB และ RCC';
+ if(main.id==='ciprocare'&&['wp','wpci','pb','pbci'].includes(rider.id))return main.name+' ไม่สามารถแนบ WP / WPCI / PB / PBCI ได้';
+ if(main.includedRiders?.includes(rider.id))return main.name+' รวม '+rider.name+' ในแบบแล้ว ไม่ต้องเพิ่มซ้ำ';
+ return '';
+}
 function validateSelection(main,selected,items=[]){
  const topup=selected.find(p=>p.id==='citopup');
  if(topup&&!selected.some(p=>p.id==='ciplus'))throw Error('CI Topup ต้องแนบกับ CI Plus');
  if(topup&&items.length){const top=items.find(i=>i.p.id==='citopup'),base=items.find(i=>i.p.id==='ciplus');if(top.amount*5!==base.amount*2)throw Error('ทุน CI Topup ต้องเท่ากับ 40% ของ CI Plus');}
  const families=selected.filter(p=>p.accidentFamily).map(p=>p.accidentFamily);if(new Set(families).size!==families.length)throw Error('เลือกสัญญาอุบัติเหตุเดียวกันซ้ำทั้งแบบมีและไม่มี RCC กรุณาเลือกแบบเดียว');
- if(main?.id==='5pay10'&&selected.some(p=>p.category!=='main'))throw Error('5 Pay 10 ไม่สามารถแนบสัญญาเพิ่มเติมได้ กรุณาแยกคำนวณแต่ละรายการ');
+ for(const p of selected){const reason=riderRestriction(main,p);if(reason)throw Error(reason);}
  if(main?.includedRiders?.some(id=>selected.some(p=>p.id===id)))throw Error(main.name+': รวม WPCI ในแบบแล้ว ไม่ต้องเพิ่มเบี้ยซ้ำ');
- if(main&&(main.id.startsWith('annuity')||main.id==='senior')&&selected.some(p=>p.category!=='main'&&!p.accidentFamily))throw Error(main.name+': ยังรองรับการแนบเฉพาะสัญญาอุบัติเหตุในเครื่องมือนี้');
+
 }
-const api={quote,validateSelection,linkedAmount,paymentTerm};if(typeof module!=='undefined')module.exports=api;else root.InsureCalculator=api;
+const api={quote,validateSelection,linkedAmount,paymentTerm,riderRestriction};if(typeof module!=='undefined')module.exports=api;else root.InsureCalculator=api;
 })(globalThis);

@@ -24,7 +24,16 @@ function addOptions(select,main=false){
  select.replaceChildren();select.append(option('',main?'ไม่เลือกแบบหลัก (คำนวณรายตัว)':'เลือกสัญญาเพิ่มเติม'));
  if(main){products.filter(p=>p.category==='main').forEach(p=>select.append(option(p.id,p.name)));return;}
  const groups=[['สุขภาพ',p=>p.category==='health'],['โรคร้ายแรง',p=>p.category==='rider'&&!p.accidentFamily&&!['hb','hbextra'].includes(p.id)&&!p.waiverType&&p.id!=='wp'],['อุบัติเหตุ',p=>p.accidentFamily],['ชดเชยรายได้',p=>['hb','hbextra'].includes(p.id)],['ยกเว้นเบี้ย',p=>p.waiverType||p.id==='wp']];
- for(const [label,accept] of groups){const group=document.createElement('optgroup');group.label=label;products.filter(accept).forEach(p=>group.append(option(p.id,p.name)));select.append(group);}
+ for(const [label,accept] of groups){const group=document.createElement('optgroup');group.label=label;products.filter(p=>accept(p)&&!InsureCalculator.riderRestriction(product($('product').value),p)).forEach(p=>group.append(option(p.id,p.name)));select.append(group);}
+}
+function syncRiderOptions(){
+ const main=product($('product').value),removed=[];
+ for(const item of riderItems()){if(InsureCalculator.riderRestriction(main,item.p)){removed.push(item.p.name);item.node.remove();}}
+ for(const select of document.querySelectorAll('.rider-product')){const value=select.value;addOptions(select);select.value=value;}
+ const available=products.some(p=>p.category!=='main'&&!InsureCalculator.riderRestriction(main,p));
+ $('addRider').disabled=!available;
+ $('riderPolicy').textContent=!available?main.name+' ไม่สามารถแนบสัญญาเพิ่มเติมได้':main?.id.startsWith('annuity')?'แบบบำนาญนี้แนบได้เฉพาะ AI / ADD / ADB และ RCC':main?.id==='ciprocare'?'CI ProCare ไม่สามารถแนบ WP / WPCI / PB / PBCI ได้':'รายการที่เลือกได้กรองตามข้อจำกัดของกรมธรรม์หลักแล้ว';
+ return removed;
 }
 function hint(p){return p?`อายุรับใหม่ ${p.minAge}–${p.maxAge} ปี${p.unit&&!p.waiverType?` · จำนวนเงินตั้งแต่ ${fmt(p.minAmount)}${p.maxAmount===null?'':` ถึง ${fmt(p.maxAmount)}`} บาท`:''}${p.note?' · '+p.note:''}`:'';}
 function riderItems(){return [...document.querySelectorAll('#riders .item')].map(node=>({node,p:product(node.querySelector('.rider-product').value),amount:getAmount(node.querySelector('.rider-amount')),plan:node.querySelector('.rider-plan').value,payerSex:node.querySelector('.payer-sex').value,payerAge:getAmount(node.querySelector('.payer-age'))})).filter(i=>i.p);}
@@ -88,9 +97,9 @@ async function init(){try{
  const responses=await Promise.all([fetch('data/products.json',{cache:'no-store'}),fetch('data/coverage.json',{cache:'no-store'})]);if(responses.some(r=>!r.ok))throw Error('โหลดข้อมูลไม่สำเร็จ');[products,coverage]=await Promise.all(responses.map(r=>r.json()));
  addOptions($('product'),true);$('product').value='payplus20';
  $('coverageStatus').textContent=`กรมธรรม์หลัก ${products.filter(p=>p.category==='main').length} แบบ/ระยะชำระ · สัญญาเพิ่มเติม PPR ${products.filter(p=>p.category!=='main').length} ตัวเลือก · WP กรอกเบี้ยจากบริษัท`;$('catalogCount').textContent=`(${coverage.length} รายการ)`;
- for(const id of ['sex','age','sum','infant'])$(id).addEventListener('input',()=>{if(id==='sum')formatMoneyInput($(id));update();});$('product').addEventListener('change',()=>{const p=product($('product').value);if(p&&getAmount($('sum'))<p.minAmount)$('sum').value=fmt(p.minAmount);update();});$('addRider').addEventListener('click',()=>addRider());$('search').addEventListener('input',catalog);
- $('reset').addEventListener('click',()=>{$('sex').value='M';$('age').value='';$('infant').checked=false;$('product').value='payplus20';$('sum').value='150,000';$('riders').replaceChildren();update();$('age').focus();});
+ for(const id of ['sex','age','sum','infant'])$(id).addEventListener('input',()=>{if(id==='sum')formatMoneyInput($(id));update();});$('product').addEventListener('change',()=>{const p=product($('product').value);if(p&&getAmount($('sum'))<p.minAmount)$('sum').value=fmt(p.minAmount);const removed=syncRiderOptions();update();if(removed.length)$('status').textContent='นำรายการที่แนบไม่ได้ออก: '+removed.join(' · ');});$('addRider').addEventListener('click',()=>addRider());$('search').addEventListener('input',catalog);
+ $('reset').addEventListener('click',()=>{$('sex').value='M';$('age').value='';$('infant').checked=false;$('product').value='payplus20';$('sum').value='150,000';$('riders').replaceChildren();syncRiderOptions();update();$('age').focus();});
  $('copy').addEventListener('click',async()=>{if(!lastSummary)return;try{await navigator.clipboard.writeText(lastSummary);$('status').textContent='คัดลอกแล้ว พร้อมวางใน LINE';}catch{const t=document.createElement('textarea');t.value=lastSummary;document.body.append(t);t.select();const copied=document.execCommand('copy');t.remove();$('status').textContent=copied?'คัดลอกแล้ว':'คัดลอกไม่สำเร็จ กรุณาอนุญาตการคัดลอกในเบราว์เซอร์';}});
- addRider('happy',undefined,'1');catalog();update();
+ addRider('happy',undefined,'1');syncRiderOptions();catalog();update();
  }catch(e){$('coverageStatus').textContent='โหลดตารางไม่สำเร็จ กรุณาลองรีเฟรช';$('error').textContent=e.message;$('error').classList.remove('hide');}}
 init();

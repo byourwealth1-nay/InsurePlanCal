@@ -120,3 +120,20 @@ for(const p of products.filter(p=>p.waiverType))for(const sex of ['M','F'])for(c
  assert.equal(q.rate,rates[i]);assert.equal(q.years,Number(term));assert.ok(Number.isFinite(q.premium));waiverChecks++;
 }
 console.log(`PASS: ${waiverChecks} printed waiver rate cells, payer/insured separation, linked CI capital, manual WP and missing-rate rejection`);
+
+// Selector eligibility and calculation validation must use the same attachment rules.
+const calc=require('../calculator');
+for(const main of products.filter(p=>p.category==='main')){
+ for(const rider of products.filter(p=>p.category!=='main')){
+  const reason=calc.riderRestriction(main,rider);
+  if(reason)assert.throws(()=>calc.validateSelection(main,[rider]),undefined,main.id+' / '+rider.id);
+ }
+}
+for(const id of ['5pay10','senior'])assert(products.filter(p=>p.category!=='main').every(p=>calc.riderRestriction(products.find(m=>m.id===id),p)));
+for(const id of ['annuityfix','annuitysure9','annuitysure60']){
+ const main=products.find(p=>p.id===id);
+ for(const p of products.filter(p=>p.category!=='main'))assert.equal(!calc.riderRestriction(main,p),!!p.accidentFamily);
+}
+for(const id of ['wp','wpci','pb','pbci'])assert(calc.riderRestriction(products.find(p=>p.id==='ciprocare'),products.find(p=>p.id===id)));
+assert.equal(calc.riderRestriction(null,products.find(p=>p.id==='happy')),'');
+console.log('PASS: main policy rider eligibility matrix and standalone calculation');
