@@ -18,7 +18,7 @@ function formatMoneyInput(input){
 function personLabel(sex,age){const child=Number.isFinite(age)&&age<18;return (sex==='M'?(child?'👦':'👨'):(child?'👧':'👩'))+' '+(sex==='M'?'ชาย':'หญิง')+' · อายุประกัน '+(Number.isFinite(age)?age:'—')+' ปี';}
 function copySummary(person,entries,total){
  const section=(title,rows)=>rows.length?['',title,...rows.map(row=>'• '+row.description+'\n  เบี้ย '+fmt(row.premium)+' บาท/ปี')]:[];
- return ['InsurePlanCal · ประเมินเบี้ยมาตรฐาน',person,...section('📋 กรมธรรม์หลัก',entries.filter(row=>row.main)),...section('🛡️ สัญญาเพิ่มเติม',entries.filter(row=>!row.main)),'','💰 รวมเบี้ย '+fmt(total)+' บาท/ปี'].join('\n');
+ return ['B Your Wealth 1 · ประเมินเบี้ยมาตรฐาน',person,...section('📋 กรมธรรม์หลัก',entries.filter(row=>row.main)),...section('🛡️ สัญญาเพิ่มเติม',entries.filter(row=>!row.main)),'','💰 รวมเบี้ย '+fmt(total)+' บาท/ปี'].join('\n');
 }
 function addOptions(select,main=false){
  select.replaceChildren();select.append(option('',main?'ไม่เลือกแบบหลัก (คำนวณรายตัว)':'เลือกสัญญาเพิ่มเติม'));
