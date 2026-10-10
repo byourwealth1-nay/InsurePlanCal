@@ -4,6 +4,11 @@ let products=[],coverage=[],lastSummary='',riderCounter=0;
 function option(value,label){const o=document.createElement('option');o.value=value;o.textContent=label;return o;}
 function product(id){return products.find(p=>p.id===id);}
 function getAmount(input){const raw=input.value.replaceAll(',','').trim();return raw===''?NaN:Number(raw);}
+function personLabel(sex,age){const child=Number.isFinite(age)&&age<18;return (sex==='M'?(child?'👦':'👨'):(child?'👧':'👩'))+' '+(sex==='M'?'ชาย':'หญิง')+' · อายุประกัน '+(Number.isFinite(age)?age:'—')+' ปี';}
+function copySummary(person,entries,total){
+ const section=(title,rows)=>rows.length?['',title,...rows.map(row=>'• '+row.description+'\n  เบี้ย '+fmt(row.premium)+' บาท/ปี')]:[];
+ return ['InsurePlanCal · ประเมินเบี้ยมาตรฐาน',person,...section('📋 กรมธรรม์หลัก',entries.filter(row=>row.main)),...section('🛡️ สัญญาเพิ่มเติม',entries.filter(row=>!row.main)),'','💰 รวมเบี้ย '+fmt(total)+' บาท/ปี'].join('\n');
+}
 function addOptions(select,main=false){
  select.replaceChildren();select.append(option('',main?'ไม่เลือกแบบหลัก (คำนวณรายตัว)':'เลือกสัญญาเพิ่มเติม'));
  if(main){products.filter(p=>p.category==='main').forEach(p=>select.append(option(p.id,p.name)));return;}
@@ -33,7 +38,7 @@ function addRider(id='',initialAmount,initialPlan){
 function update(){
  $('status').textContent='';lastSummary='';$('copy').disabled=true;$('summaryRows').replaceChildren();$('sources').replaceChildren();
  const sex=$('sex').value,age=getAmount($('age')),infantConfirmed=$('infant').checked,main=product($('product').value),mainAmount=getAmount($('sum'));
- $('infantRow').classList.toggle('hide',age!==0);$('person').textContent=(sex==='M'?'ชาย':'หญิง')+' · อายุประกัน '+(Number.isFinite(age)?age:'—')+' ปี';$('mainHint').textContent=hint(main);$('sumLabel').textContent=main?.id==='annuityfix'?'ฐานเงินบำนาญ (บาท)':'ทุนประกัน (บาท)';
+ $('infantRow').classList.toggle('hide',age!==0);$('person').textContent=personLabel(sex,age);$('mainHint').textContent=hint(main);$('sumLabel').textContent=main?.id==='annuityfix'?'ฐานเงินบำนาญ (บาท)':'ทุนประกัน (บาท)';
  const riders=riderItems();let basePremium;
  try{if(main)basePremium=InsureCalculator.quote(main,{sex,age,amount:mainAmount,infantConfirmed}).premium;}catch{}
  for(const i of riders){
@@ -46,6 +51,7 @@ function update(){
  }
  const items=main?[{p:main,amount:mainAmount,output:'mainPremium'},...riders]:riders;if(!main)$('mainPremium').textContent='0 บาท';
  const errors=[],lines=[],used=new Set(),ids=new Set();let cents=0;
+ if(!Number.isFinite(age))errors.push('กรุณากรอกอายุประกัน');
  if(!items.length)errors.push('กรุณาเลือกอย่างน้อยหนึ่งรายการ');
  for(const item of items){
   let text='—',description=item.p.name;
@@ -56,7 +62,7 @@ function update(){
    text=fmt(q.premium)+' บาท';cents+=Math.round(q.premium*100);
    if(q.manual)description+=' · เบี้ยตามใบเสนอขายที่กรอก';
    if(q.years){description+=` · คุ้มครอง ${q.years} ปี`;if(item.p.waiverType==='payer')description+=` · ผู้ชำระเบี้ย ${item.payerSex==='M'?'ชาย':'หญิง'} ${item.payerAge} ปี`;item.node.querySelector('.linked-hint').textContent=`ใช้เบี้ยหลัก ${fmt(q.basePremium)} บาท/ปี · ระยะคุ้มครอง ${q.years} ปี`;}
-   lines.push(description+' · '+text+'/ปี');
+   lines.push({description,premium:q.premium,main:item.p.category==='main'});
   }catch(e){errors.push(e.message);}
   if(item.output)$(item.output).textContent=text;if(item.node)item.node.querySelector('.rider-premium').textContent=text;
   const row=document.createElement('div');row.className='row';const label=document.createElement('div'),price=document.createElement('strong');label.textContent=description;price.textContent=text;row.append(label,price);$('summaryRows').append(row);
@@ -64,7 +70,7 @@ function update(){
  }
  try{InsureCalculator.validateSelection(main,items.map(item=>item.p),items);}catch(e){errors.push(e.message);}
  $('error').classList.toggle('hide',errors.length===0);$('error').textContent=[...new Set(errors)].join(' · ');$('total').textContent=errors.length?'—':fmt(cents/100);
- if(!errors.length){$('copy').disabled=false;lastSummary=['InsurePlanCal · ประเมินเบี้ยมาตรฐาน',$('person').textContent,...lines,'รวมรายการที่เลือก '+fmt(cents/100)+' บาท/ปี'].join('\n');}
+ if(!errors.length){$('copy').disabled=false;lastSummary=copySummary($('person').textContent,lines,cents/100);}
 }
 function catalog(){const query=$('search').value.trim().toLowerCase();$('catalog').replaceChildren();const shown=coverage.filter(d=>d.title.toLowerCase().includes(query));for(const d of shown){const n=document.createElement('div');n.className='catalog-item';const a=document.createElement('a');a.href=d.url;a.target='_blank';a.rel='noopener';a.textContent=d.title;const status=document.createElement('span');status.textContent=d.status==='used'?'ใช้คำนวณเบี้ยมาตรฐานแล้ว':d.reason;status.className=d.status==='used'?'status-pill':'small';n.append(a,status);$('catalog').append(n);}if(!shown.length)$('catalog').textContent='ไม่พบรายการที่ตรงกับคำค้น';}
 async function init(){try{
