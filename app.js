@@ -4,6 +4,17 @@ let products=[],coverage=[],lastSummary='',riderCounter=0;
 function option(value,label){const o=document.createElement('option');o.value=value;o.textContent=label;return o;}
 function product(id){return products.find(p=>p.id===id);}
 function getAmount(input){const raw=input.value.replaceAll(',','').trim();return raw===''?NaN:Number(raw);}
+function formatMoneyInput(input){
+ const original=input.value,raw=original.replaceAll(',','');
+ if(!/^[0-9]*(\.[0-9]*)?$/.test(raw)||raw==='')return;
+ const start=input.selectionStart,end=input.selectionEnd;
+ const [whole,fraction]=raw.split('.');
+ const grouped=whole.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+ const formatted=grouped+(fraction===undefined?'':'.'+fraction);
+ const position=offset=>{if(offset===null)return null;const count=original.slice(0,offset).replaceAll(',','').length;let seen=0;for(let i=0;i<formatted.length;i++){if(formatted[i]!==',')seen++;if(seen===count)return i+1;}return count===0?0:formatted.length;};
+ input.value=formatted;
+ if(start!==null&&end!==null)input.setSelectionRange(start===0?0:position(start),end===0?0:position(end));
+}
 function personLabel(sex,age){const child=Number.isFinite(age)&&age<18;return (sex==='M'?(child?'👦':'👨'):(child?'👧':'👩'))+' '+(sex==='M'?'ชาย':'หญิง')+' · อายุประกัน '+(Number.isFinite(age)?age:'—')+' ปี';}
 function copySummary(person,entries,total){
  const section=(title,rows)=>rows.length?['',title,...rows.map(row=>'• '+row.description+'\n  เบี้ย '+fmt(row.premium)+' บาท/ปี')]:[];
@@ -31,7 +42,7 @@ function addRider(id='',initialAmount,initialPlan){
   if(p?.id==='citopup'&&!riderItems().some(i=>i.p.id==='ciplus'))addRider('ciplus',oldId==='ciplus'&&Number.isFinite(oldAmount)?oldAmount:100000);
   update();
  }
- select.addEventListener('change',change);for(const control of node.querySelectorAll('input,.rider-plan,.payer-sex'))control.addEventListener('input',update);
+ select.addEventListener('change',change);for(const control of node.querySelectorAll('input,.rider-plan,.payer-sex'))control.addEventListener('input',()=>{if(control===input)formatMoneyInput(input);update();});
  node.querySelector('button').addEventListener('click',()=>{const base=select.value==='ciplus';node.remove();if(base)riderItems().filter(i=>i.p.id==='citopup').forEach(i=>i.node.remove());update();if(base)$('status').textContent='ลบ CI Plus และ CI Topup ที่แนบอยู่แล้ว';});
  change();if(initialAmount!==undefined)input.value=fmt(initialAmount);if(initialPlan!==undefined)node.querySelector('.rider-plan').value=initialPlan;update();return node;
 }
@@ -77,7 +88,7 @@ async function init(){try{
  const responses=await Promise.all([fetch('data/products.json',{cache:'no-store'}),fetch('data/coverage.json',{cache:'no-store'})]);if(responses.some(r=>!r.ok))throw Error('โหลดข้อมูลไม่สำเร็จ');[products,coverage]=await Promise.all(responses.map(r=>r.json()));
  addOptions($('product'),true);$('product').value='payplus20';
  $('coverageStatus').textContent=`กรมธรรม์หลัก ${products.filter(p=>p.category==='main').length} แบบ/ระยะชำระ · สัญญาเพิ่มเติม PPR ${products.filter(p=>p.category!=='main').length} ตัวเลือก · WP กรอกเบี้ยจากบริษัท`;$('catalogCount').textContent=`(${coverage.length} รายการ)`;
- for(const id of ['sex','age','sum','infant'])$(id).addEventListener('input',update);$('product').addEventListener('change',()=>{const p=product($('product').value);if(p&&getAmount($('sum'))<p.minAmount)$('sum').value=fmt(p.minAmount);update();});$('addRider').addEventListener('click',()=>addRider());$('search').addEventListener('input',catalog);
+ for(const id of ['sex','age','sum','infant'])$(id).addEventListener('input',()=>{if(id==='sum')formatMoneyInput($(id));update();});$('product').addEventListener('change',()=>{const p=product($('product').value);if(p&&getAmount($('sum'))<p.minAmount)$('sum').value=fmt(p.minAmount);update();});$('addRider').addEventListener('click',()=>addRider());$('search').addEventListener('input',catalog);
  $('reset').addEventListener('click',()=>{$('sex').value='M';$('age').value='';$('infant').checked=false;$('product').value='payplus20';$('sum').value='150,000';$('riders').replaceChildren();update();$('age').focus();});
  $('copy').addEventListener('click',async()=>{if(!lastSummary)return;try{await navigator.clipboard.writeText(lastSummary);$('status').textContent='คัดลอกแล้ว พร้อมวางใน LINE';}catch{const t=document.createElement('textarea');t.value=lastSummary;document.body.append(t);t.select();const copied=document.execCommand('copy');t.remove();$('status').textContent=copied?'คัดลอกแล้ว':'คัดลอกไม่สำเร็จ กรุณาอนุญาตการคัดลอกในเบราว์เซอร์';}});
  addRider('happy',undefined,'1');catalog();update();
