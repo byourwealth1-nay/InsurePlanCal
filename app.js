@@ -64,7 +64,7 @@ function update(){
  }
  try{InsureCalculator.validateSelection(main,items.map(item=>item.p),items);}catch(e){errors.push(e.message);}
  $('error').classList.toggle('hide',errors.length===0);$('error').textContent=[...new Set(errors)].join(' · ');$('total').textContent=errors.length?'—':fmt(cents/100);
- if(!errors.length){$('copy').disabled=false;lastSummary=['InsurePlanCal · ประเมินเบี้ยมาตรฐาน',$('person').textContent,...lines,'รวมรายการที่เลือก '+fmt(cents/100)+' บาท/ปี','ยังไม่ยืนยันการแนบสัญญาร่วมกัน / อัตราปัจจุบัน · ไม่รวม Vitality และเบี้ยเพิ่ม','แหล่งข้อมูล:',...[...used]].join('\n');}
+ if(!errors.length){$('copy').disabled=false;lastSummary=['InsurePlanCal · ประเมินเบี้ยมาตรฐาน',$('person').textContent,...lines,'รวมรายการที่เลือก '+fmt(cents/100)+' บาท/ปี'].join('\n');}
 }
 function catalog(){const query=$('search').value.trim().toLowerCase();$('catalog').replaceChildren();const shown=coverage.filter(d=>d.title.toLowerCase().includes(query));for(const d of shown){const n=document.createElement('div');n.className='catalog-item';const a=document.createElement('a');a.href=d.url;a.target='_blank';a.rel='noopener';a.textContent=d.title;const status=document.createElement('span');status.textContent=d.status==='used'?'ใช้คำนวณเบี้ยมาตรฐานแล้ว':d.reason;status.className=d.status==='used'?'status-pill':'small';n.append(a,status);$('catalog').append(n);}if(!shown.length)$('catalog').textContent='ไม่พบรายการที่ตรงกับคำค้น';}
 async function init(){try{
