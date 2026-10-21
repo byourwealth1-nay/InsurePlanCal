@@ -1,0 +1,583 @@
+{
+  "date": "2026-10-21",
+  "scope": "Existing traditional main/PPR products; source-edition match, not confirmation of currently offered company rates",
+  "productsChecked": 63,
+  "automaticRateProducts": 62,
+  "manualOnly": [
+    "wp"
+  ],
+  "rateCellsChecked": 10108,
+  "numericRateCells": 9756,
+  "unavailableCellsPreserved": 352,
+  "products": [
+    {
+      "id": "payplus10",
+      "name": "Pay Life Plus · 10 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "AIA+Pay+Life+Plus+(Non+Par)_16Feb2023_20230217.pdf",
+        "url": "https://drive.google.com/file/d/1VyFKzjbMDv45nPb5YM77uXANLr68XKXk/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "payplus15",
+      "name": "Pay Life Plus · 15 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "AIA+Pay+Life+Plus+(Non+Par)_16Feb2023_20230217.pdf",
+        "url": "https://drive.google.com/file/d/1VyFKzjbMDv45nPb5YM77uXANLr68XKXk/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "payplus20",
+      "name": "Pay Life Plus · 20 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "AIA+Pay+Life+Plus+(Non+Par)_16Feb2023_20230217.pdf",
+        "url": "https://drive.google.com/file/d/1VyFKzjbMDv45nPb5YM77uXANLr68XKXk/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "pay20",
+      "name": "20 Pay Life (Non Par)",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+20Pay+Life+(Non+Par)_18Jan2023_Final_re_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1A148usHQLHLHuvBjFIlDwHa3A_C1Te-V/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "pay10",
+      "name": "10 Pay Life (Non Par)",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+10&15+Pay+Life+(Non+Par)_18Jan2023_Final_re_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1Ei2obYSfM9uUvX9q1aj-ELcX4JxzkDCj/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "pay15",
+      "name": "15 Pay Life (Non Par)",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+10&15+Pay+Life+(Non+Par)_18Jan2023_Final_re_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1Ei2obYSfM9uUvX9q1aj-ELcX4JxzkDCj/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "senior",
+      "name": "Senior Happy",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+Senior+Happy_18Jan2023_Final_re_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1gVQi1tLb8JIhXbcWjHpqExUBbVGxkpSx/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "annuityfix",
+      "name": "Annuity Fix",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+Annuity+Fix_18Jan2023_Final_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1UEett_Xsyi-ZZ28_l24PKm3azwS-HyGj/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "annuitysure60",
+      "name": "Annuity Sure · ชำระถึงอายุ 60",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_TH_AIA_Annuity_Sure_20250901.pdf",
+        "url": "https://drive.google.com/file/d/1VFf8NTvHq_gVlINUqSnlOLbUTLclW_AC/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "annuitysure9",
+      "name": "Annuity Sure · 9 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_TH_AIA_Annuity_Sure_20250901.pdf",
+        "url": "https://drive.google.com/file/d/1VFf8NTvHq_gVlINUqSnlOLbUTLclW_AC/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "happy",
+      "name": "Health Happy",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_HealthHappy_20250729.pdf",
+        "url": "https://drive.google.com/file/d/1qb8UFnp26pcXQFhgOk-LlNky13veqTqY/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "saver",
+      "name": "Health Saver",
+      "status": "source-matched",
+      "source": {
+        "title": "AIA_HealthSaver_Brochure_TH_20260130.pdf",
+        "url": "https://drive.google.com/file/d/1XI7u-my195pAlESJ9T3Myj0bC0Qc35L8/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "herobegin",
+      "name": "Health CI Hero · Begin",
+      "status": "source-matched",
+      "source": {
+        "title": "AIAHealthCIHeroBrochureTH_20260723_1.pdf",
+        "url": "https://drive.google.com/file/d/1s_8NLDnlMOUf1Ty_hzA7gVwP3vB_ERBR/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "herobalanced",
+      "name": "Health CI Hero · Balanced",
+      "status": "source-matched",
+      "source": {
+        "title": "AIAHealthCIHeroBrochureTH_20260723_1.pdf",
+        "url": "https://drive.google.com/file/d/1s_8NLDnlMOUf1Ty_hzA7gVwP3vB_ERBR/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "ciplus",
+      "name": "CI Plus",
+      "status": "source-matched",
+      "source": {
+        "title": "AIA_CI_Plus_2025_20250729_re.pdf",
+        "url": "https://drive.google.com/file/d/1tH39zurNQeQg_XdTzzWeXUiVpnCl3r0B/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "mpciplus",
+      "name": "Multi-Pay CI Plus + Total Care",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA+MPCI_Plus_2025_TH_20250729_re.pdf",
+        "url": "https://drive.google.com/file/d/1CBCruAAq2kk8AQ2rirNeM9UwGuJNClIC/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "cancer",
+      "name": "Care for Cancer",
+      "status": "source-matched",
+      "source": {
+        "title": "AIACareforCancer_2025_TH_20250729_re.pdf",
+        "url": "https://drive.google.com/file/d/1I7skxPshRw4HTw6c2jgSlJ0HM_Cc9Mng/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "hbextra",
+      "name": "HB Extra",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochue_AIAHBExtra_20250901.pdf",
+        "url": "https://drive.google.com/file/d/1xDv4x6AdlzAlMFHkRVy4ZrxVbpBC8yr0/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "tpd",
+      "name": "TPD",
+      "status": "source-matched",
+      "source": {
+        "title": "BrochureTPD_2025_TH_20250729.pdf",
+        "url": "https://drive.google.com/file/d/1a1PhNRZ4uA6jYQ56crBWne60ET1zrOFK/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "protection65",
+      "name": "Protection 65",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_Protection65_TH_20240425.pdf",
+        "url": "https://drive.google.com/file/d/1qRvE1TXq2RMCycZ2ah2jjaHsp2iIKHqi/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "savingsure",
+      "name": "Saving Sure",
+      "status": "source-matched",
+      "source": {
+        "title": "AIA_SavingSure_Brochure_20230921.pdf",
+        "url": "https://drive.google.com/file/d/1LVmSLDFq6SpTjC0x08dDf9j5TeN39hXU/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "5pay10",
+      "name": "5 Pay 10 (Non Par)",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+5Pay10+(Non+Par)_27Jan2023.pdf_Final_re_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1aLsNN4Kwp_f9RZkg_7WM0qZ1X6bKfa-8/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "endowment",
+      "name": "Endowment 15/25",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+Endowment+15Pay25+(Non+Par)_27Jan2023_Final_re_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1GI1h_DHNPFQKvt7IG8ndQc6uWKX20kMh/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "starterbegin",
+      "name": "Health Starter · Begin",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_Health_Starter_20260115.pdf",
+        "url": "https://drive.google.com/file/d/1TnO8I_8thH2ARse_qv24vMJC5LDFIBZM/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "starterbalanced",
+      "name": "Health Starter · Balanced",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_Health_Starter_20260115.pdf",
+        "url": "https://drive.google.com/file/d/1TnO8I_8thH2ARse_qv24vMJC5LDFIBZM/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "infinite",
+      "name": "Infinite Care (new standard)",
+      "status": "source-matched",
+      "source": {
+        "title": "AIAInfiniteCare_NewSTD_TH_20260401.pdf",
+        "url": "https://drive.google.com/file/d/1_ngAaphK5RgI1IcdUy7Q_9qHqndEJXZF/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "term5",
+      "name": "Term 5",
+      "status": "source-matched",
+      "source": {
+        "title": "Term_Premuim_20180622.pdf",
+        "url": "https://drive.google.com/file/d/1L3a-tExZMcLUL0dx5Rje3ZI1VZqkHdfJ/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "term10",
+      "name": "Term 10",
+      "status": "source-matched",
+      "source": {
+        "title": "Term_Premuim_20180622.pdf",
+        "url": "https://drive.google.com/file/d/1L3a-tExZMcLUL0dx5Rje3ZI1VZqkHdfJ/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "term15",
+      "name": "Term 15",
+      "status": "source-matched",
+      "source": {
+        "title": "Term_Premuim_20180622.pdf",
+        "url": "https://drive.google.com/file/d/1L3a-tExZMcLUL0dx5Rje3ZI1VZqkHdfJ/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "term20",
+      "name": "Term 20",
+      "status": "source-matched",
+      "source": {
+        "title": "Term_Premuim_20180622.pdf",
+        "url": "https://drive.google.com/file/d/1L3a-tExZMcLUL0dx5Rje3ZI1VZqkHdfJ/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "excellent",
+      "name": "Excellent (Non Par)",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+Excellent+(Non+Par)_27Jan2023_Final_re_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1nu4EtjVblWxovDePTQIH9AdQ62DNNljw/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "legacy10",
+      "name": "Legacy Prestige (New) · 10 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_Legacy_Prestige(New)_20250220.pdf",
+        "url": "https://drive.google.com/file/d/1kABDQipwF71Ih51wYqyvLKti_0x6le43/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "legacy15",
+      "name": "Legacy Prestige (New) · 15 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_Legacy_Prestige(New)_20250220.pdf",
+        "url": "https://drive.google.com/file/d/1kABDQipwF71Ih51wYqyvLKti_0x6le43/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "legacyplus10",
+      "name": "Legacy Prestige Plus (New) · 10 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_Legacy_Prestige_Plus(New)_20250220.pdf",
+        "url": "https://drive.google.com/file/d/1q9LaI5oqqgfi3z9h82ybEEFqRXJm16ck/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "legacyplus15",
+      "name": "Legacy Prestige Plus (New) · 15 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_Legacy_Prestige_Plus(New)_20250220.pdf",
+        "url": "https://drive.google.com/file/d/1q9LaI5oqqgfi3z9h82ybEEFqRXJm16ck/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "legacyplus20",
+      "name": "Legacy Prestige Plus (New) · 20 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_Legacy_Prestige_Plus(New)_20250220.pdf",
+        "url": "https://drive.google.com/file/d/1q9LaI5oqqgfi3z9h82ybEEFqRXJm16ck/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "legacyprotection5",
+      "name": "Legacy Prestige Protection (New) · 5 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_Legacy_Prestige_Protection(New)_20250220.pdf",
+        "url": "https://drive.google.com/file/d/1ZL26zHwzN7-35mCcMWIGEEkm6pD2PQBD/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "ciprocare",
+      "name": "CI ProCare · 20 Pay",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIACIProCare_2July2024_20240704.pdf",
+        "url": "https://drive.google.com/file/d/14IgySe93Tbtq1_8X5sFig4RCdcCL9-um/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "cisuper10",
+      "name": "CI SuperCare · 10/99",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+CI+SuperCare_18Jan2023_Final_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1yme5OpwuVLo4VXmOlZ58-SLnE8zZOzY9/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "cisuperprestige10",
+      "name": "CI SuperCare Prestige · 10/99",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+CI+SuperCare+Prestige_1Feb2023_Final_20230202.pdf",
+        "url": "https://drive.google.com/file/d/1L2NoUdrZ6Fa7HP_KNqmOf05z_B_SBB-a/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "cisuper20",
+      "name": "CI SuperCare · 20/99",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+CI+SuperCare_18Jan2023_Final_20230127.pdf",
+        "url": "https://drive.google.com/file/d/1yme5OpwuVLo4VXmOlZ58-SLnE8zZOzY9/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "cisuperprestige20",
+      "name": "CI SuperCare Prestige · 20/99",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure+AIA+CI+SuperCare+Prestige_1Feb2023_Final_20230202.pdf",
+        "url": "https://drive.google.com/file/d/1L2NoUdrZ6Fa7HP_KNqmOf05z_B_SBB-a/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "hs",
+      "name": "H&S (new standard)",
+      "status": "source-matched",
+      "source": {
+        "title": "2_Health_Rider_Book_P8-45_20250324.pdf",
+        "url": "https://drive.google.com/file/d/1kdHw2KAsXCJ2HXr0BU6Z6HkMgktmtTa1/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "hsextra",
+      "name": "H&S Extra (new standard)",
+      "status": "source-matched",
+      "source": {
+        "title": "2_Health_Rider_Book_P8-45_20250324.pdf",
+        "url": "https://drive.google.com/file/d/1kdHw2KAsXCJ2HXr0BU6Z6HkMgktmtTa1/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "happykids",
+      "name": "Health Happy Kids",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIA_HealthHappyKids_20250729.pdf",
+        "url": "https://drive.google.com/file/d/1c2k-nm59hrB2nZET64zMPI_0WyeItn4o/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "citopup",
+      "name": "CI Topup (แนบ CI Plus)",
+      "status": "source-matched",
+      "source": {
+        "title": "3_CI+Rider_Book_P46-73_20241114.pdf",
+        "url": "https://drive.google.com/file/d/13BESkX_p1pAj3cLlvAmvCA3eCm-tKfdE/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "ladycare",
+      "name": "Lady Care",
+      "status": "source-matched",
+      "source": {
+        "title": "3_CI+Rider_Book_P46-73_20241114.pdf",
+        "url": "https://drive.google.com/file/d/13BESkX_p1pAj3cLlvAmvCA3eCm-tKfdE/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "ladycareplus",
+      "name": "Lady Care Plus",
+      "status": "source-matched",
+      "source": {
+        "title": "3_CI+Rider_Book_P46-73_20241114.pdf",
+        "url": "https://drive.google.com/file/d/13BESkX_p1pAj3cLlvAmvCA3eCm-tKfdE/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "ai",
+      "name": "AI",
+      "status": "source-matched",
+      "source": {
+        "title": "4_Accident_Rider_Book_P74-77_20241115.pdf",
+        "url": "https://drive.google.com/file/d/1iTDXgv4SUcrS2RdQ3VHnGub3Ld_pX0uW/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "aircc",
+      "name": "AI + RCC",
+      "status": "source-matched",
+      "source": {
+        "title": "4_Accident_Rider_Book_P74-77_20241115.pdf",
+        "url": "https://drive.google.com/file/d/1iTDXgv4SUcrS2RdQ3VHnGub3Ld_pX0uW/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "add",
+      "name": "ADD",
+      "status": "source-matched",
+      "source": {
+        "title": "4_Accident_Rider_Book_P74-77_20241115.pdf",
+        "url": "https://drive.google.com/file/d/1iTDXgv4SUcrS2RdQ3VHnGub3Ld_pX0uW/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "addrcc",
+      "name": "ADD + RCC",
+      "status": "source-matched",
+      "source": {
+        "title": "4_Accident_Rider_Book_P74-77_20241115.pdf",
+        "url": "https://drive.google.com/file/d/1iTDXgv4SUcrS2RdQ3VHnGub3Ld_pX0uW/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "adb",
+      "name": "ADB",
+      "status": "source-matched",
+      "source": {
+        "title": "4_Accident_Rider_Book_P74-77_20241115.pdf",
+        "url": "https://drive.google.com/file/d/1iTDXgv4SUcrS2RdQ3VHnGub3Ld_pX0uW/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "adbrcc",
+      "name": "ADB + RCC",
+      "status": "source-matched",
+      "source": {
+        "title": "4_Accident_Rider_Book_P74-77_20241115.pdf",
+        "url": "https://drive.google.com/file/d/1iTDXgv4SUcrS2RdQ3VHnGub3Ld_pX0uW/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "hb",
+      "name": "HB",
+      "status": "source-matched",
+      "source": {
+        "title": "2_Health_Rider_Book_P8-45_20250324.pdf",
+        "url": "https://drive.google.com/file/d/1kdHw2KAsXCJ2HXr0BU6Z6HkMgktmtTa1/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "protector70",
+      "name": "Life Protector 70",
+      "status": "source-matched",
+      "source": {
+        "title": "AIA_BenefitPlus2025_Full_8Aug2025_20250813.pdf",
+        "url": "https://drive.google.com/file/d/1PfO-oPGBnw2R_OAvm--nOb-Np78QhvgW/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "protector80",
+      "name": "Life Protector 80",
+      "status": "source-matched",
+      "source": {
+        "title": "AIA_BenefitPlus2025_Full_8Aug2025_20250813.pdf",
+        "url": "https://drive.google.com/file/d/1PfO-oPGBnw2R_OAvm--nOb-Np78QhvgW/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "lifetimeincome",
+      "name": "Lifetime Income 9/99 (Par)",
+      "status": "source-matched",
+      "source": {
+        "title": "Brochure_AIALTI99_9_2026#F1+copy.pdf",
+        "url": "https://drive.google.com/file/d/1jPscxsgbG0vpPyDIKYJdBJsRw0opaRhm/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "pb",
+      "name": "PB",
+      "status": "source-matched",
+      "source": {
+        "title": "5_Waive_Rider_Book_78-96_20241114.pdf",
+        "url": "https://drive.google.com/file/d/1lXLrKlYosuYDiXuh0vt1pc32m0spUwjR/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "pbci",
+      "name": "PBCI",
+      "status": "source-matched",
+      "source": {
+        "title": "5_Waive_Rider_Book_78-96_20241114.pdf",
+        "url": "https://drive.google.com/file/d/1lXLrKlYosuYDiXuh0vt1pc32m0spUwjR/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "wpci",
+      "name": "WPCI",
+      "status": "source-matched",
+      "source": {
+        "title": "5_Waive_Rider_Book_78-96_20241114.pdf",
+        "url": "https://drive.google.com/file/d/1lXLrKlYosuYDiXuh0vt1pc32m0spUwjR/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "wp",
+      "name": "WP (กรอกเบี้ยจากบริษัท)",
+      "status": "manual-no-rate-table",
+      "source": {
+        "title": "5_Waive_Rider_Book_78-96_20241114.pdf",
+        "url": "https://drive.google.com/file/d/1lXLrKlYosuYDiXuh0vt1pc32m0spUwjR/view?usp=drivesdk"
+      }
+    },
+    {
+      "id": "healthcancer",
+      "name": "Health Cancer · 10 หน่วย",
+      "status": "source-matched",
+      "source": {
+        "title": "3_CI+Rider_Book_P46-73_20241114.pdf",
+        "url": "https://drive.google.com/file/d/13BESkX_p1pAj3cLlvAmvCA3eCm-tKfdE/view?usp=drivesdk"
+      }
+    }
+  ],
+  "differences": [],
+  "pending": []
+}

@@ -23,6 +23,7 @@ jobs:
           node --check app.js
           node --check calculator.js
           node tests/calculator.test.js
+          node tests/source-rates.test.js
       - name: Check Pages setup
         id: pages
         uses: actions/github-script@v7
@@ -35,7 +36,7 @@ jobs:
         run: |
           mkdir -p _site/data
           cp index.html app.js calculator.js _site/
-          cp data/products.json data/coverage.json _site/data/
+          cp data/products.json data/coverage.json data/full-rate-audit.json _site/data/
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -12,7 +12,7 @@ assert set(rows)==set(range(20,60))
 for j,(term,hi) in enumerate([(5,59),(10,55),(15,50),(20,45)]):
  add(f'term{term}',f'Term {term}','main',src,20,hi,minimum=350000,bands=list(range(20,hi+1)),rates={s:[rows[a][j*2+k] for a in range(20,hi+1)] for k,s in enumerate(['M','F'])},discounts=[[1000000,1],[500000,.5]],paymentYears=term)
 src='1nu4EtjVblWxovDePTQIH9AdQ62DNNljw';v=[float(x) for x in re.findall(r'\d+\.\d+',D[src]['text'][9331:])];assert len(v)==76
-add('excellent','Excellent (Non Par)','main',src,0,75,minimum=100000,bands=list(range(76)),rates={'M':v,'F':v},discounts=[[250000,1]],paymentYears=7)
+add('excellent','Excellent (Non Par)','main',src,0,75,minimum=100000,bands=list(range(76)),rates={'M':v,'F':v},discounts=[[250000,1]],paymentYears=20)
 # Printed amount-tier rate columns; use the printed values, not recomputed percentage rounding.
 for src,id,name,n,pays,start,end in [('1kABDQipwF71Ih51wYqyvLKti_0x6le43','legacy','Legacy Prestige (New)',66,[10,15],8909,13850),('1q9LaI5oqqgfi3z9h82ybEEFqRXJm16ck','legacyplus','Legacy Prestige Plus (New)',76,[10,15,20],22330,31200)]:
  v=[float(x) for x in re.findall(r'\d+\.\d+',D[src]['text'][start:end])];assert len(v)==n*4*len(pays),(id,len(v))
