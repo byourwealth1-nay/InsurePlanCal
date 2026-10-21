@@ -1,0 +1,1442 @@
+{
+  "sourcePages": [
+    8,
+    9
+  ],
+  "comparedCells": 380,
+  "correctedCells": 179,
+  "changes": [
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 20,
+      "room": 1500,
+      "before": 10100,
+      "after": 4100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 25,
+      "room": 1500,
+      "before": 10500,
+      "after": 4200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 30,
+      "room": 1500,
+      "before": 11400,
+      "after": 4500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 35,
+      "room": 1500,
+      "before": 12300,
+      "after": 4700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 40,
+      "room": 1500,
+      "before": 16000,
+      "after": 5000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 45,
+      "room": 1500,
+      "before": 20500,
+      "after": 5400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 50,
+      "room": 1500,
+      "before": 27700,
+      "after": 5600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 55,
+      "room": 1500,
+      "before": 38000,
+      "after": 7800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 60,
+      "room": 1500,
+      "before": 54700,
+      "after": 10500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 65,
+      "room": 1500,
+      "before": 79700,
+      "after": 15200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 70,
+      "room": 1500,
+      "before": 117100,
+      "after": 22000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 75,
+      "room": 1500,
+      "before": 128400,
+      "after": 33000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 80,
+      "room": 1500,
+      "before": 140800,
+      "after": 49500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 85,
+      "room": 1500,
+      "before": 154400,
+      "after": 74200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 90,
+      "room": 1500,
+      "before": 83700,
+      "after": 81600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 95,
+      "room": 1500,
+      "before": 41300,
+      "after": 89800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 98,
+      "room": 1500,
+      "before": 21500,
+      "after": 98800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 15,
+      "room": 1500,
+      "before": 13400,
+      "after": 8500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 20,
+      "room": 1500,
+      "before": 14500,
+      "after": 4300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 25,
+      "room": 1500,
+      "before": 15000,
+      "after": 4600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 30,
+      "room": 1500,
+      "before": 15700,
+      "after": 4700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 35,
+      "room": 1500,
+      "before": 16200,
+      "after": 5300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 40,
+      "room": 1500,
+      "before": 17600,
+      "after": 5600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 45,
+      "room": 1500,
+      "before": 19700,
+      "after": 6100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 50,
+      "room": 1500,
+      "before": 24500,
+      "after": 6200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 55,
+      "room": 1500,
+      "before": 31600,
+      "after": 8500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 60,
+      "room": 1500,
+      "before": 42900,
+      "after": 11500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 65,
+      "room": 1500,
+      "before": 59300,
+      "after": 16600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 70,
+      "room": 1500,
+      "before": 85700,
+      "after": 24000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 75,
+      "room": 1500,
+      "before": 125300,
+      "after": 36000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 80,
+      "room": 1500,
+      "before": 184800,
+      "after": 54000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 85,
+      "room": 1500,
+      "before": 202600,
+      "after": 81000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 90,
+      "room": 1500,
+      "before": 222300,
+      "after": 89100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 95,
+      "room": 1500,
+      "before": 243900,
+      "after": 98100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 98,
+      "room": 1500,
+      "before": 68000,
+      "after": 107900
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 15,
+      "room": 2000,
+      "before": 55700,
+      "after": 14300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 20,
+      "room": 2000,
+      "before": 77300,
+      "after": 7000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 25,
+      "room": 2000,
+      "before": 112600,
+      "after": 7100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 30,
+      "room": 2000,
+      "before": 165700,
+      "after": 7700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 35,
+      "room": 2000,
+      "before": 181700,
+      "after": 8100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 40,
+      "room": 2000,
+      "before": 199100,
+      "after": 8500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 45,
+      "room": 2000,
+      "before": 218400,
+      "after": 9100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 50,
+      "room": 2000,
+      "before": 70500,
+      "after": 9500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 55,
+      "room": 2000,
+      "before": 36400,
+      "after": 13200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 60,
+      "room": 2000,
+      "before": 19300,
+      "after": 17300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 65,
+      "room": 2000,
+      "before": 9800,
+      "after": 23200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 70,
+      "room": 2000,
+      "before": 9900,
+      "after": 31800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 75,
+      "room": 2000,
+      "before": 11100,
+      "after": 45600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 80,
+      "room": 2000,
+      "before": 11700,
+      "after": 66300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 85,
+      "room": 2000,
+      "before": 12100,
+      "after": 97400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 90,
+      "room": 2000,
+      "before": 13000,
+      "after": 106800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 95,
+      "room": 2000,
+      "before": 13500,
+      "after": 117000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 98,
+      "room": 2000,
+      "before": 18700,
+      "after": 128300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 15,
+      "room": 2000,
+      "before": 34300,
+      "after": 13200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 20,
+      "room": 2000,
+      "before": 17600,
+      "after": 7800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 25,
+      "room": 2000,
+      "before": 11000,
+      "after": 8500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 30,
+      "room": 2000,
+      "before": 11900,
+      "after": 9100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 35,
+      "room": 2000,
+      "before": 12400,
+      "after": 9200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 40,
+      "room": 2000,
+      "before": 13400,
+      "after": 9500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 45,
+      "room": 2000,
+      "before": 13700,
+      "after": 10200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 50,
+      "room": 2000,
+      "before": 15000,
+      "after": 11100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 55,
+      "room": 2000,
+      "before": 16200,
+      "after": 14400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 60,
+      "room": 2000,
+      "before": 20700,
+      "after": 18500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 65,
+      "room": 2000,
+      "before": 26700,
+      "after": 25000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 70,
+      "room": 2000,
+      "before": 36200,
+      "after": 34300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 75,
+      "room": 2000,
+      "before": 50000,
+      "after": 49500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 80,
+      "room": 2000,
+      "before": 72200,
+      "after": 72100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 85,
+      "room": 2000,
+      "before": 105600,
+      "after": 106100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 90,
+      "room": 2000,
+      "before": 155700,
+      "after": 116300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 95,
+      "room": 2000,
+      "before": 170700,
+      "after": 127600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 98,
+      "room": 2000,
+      "before": 187200,
+      "after": 139900
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 15,
+      "room": 2500,
+      "before": 24400,
+      "after": 17000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 20,
+      "room": 2500,
+      "before": 33000,
+      "after": 8400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 25,
+      "room": 2500,
+      "before": 45300,
+      "after": 8600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 30,
+      "room": 2500,
+      "before": 65200,
+      "after": 9500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 35,
+      "room": 2500,
+      "before": 95000,
+      "after": 10000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 40,
+      "room": 2500,
+      "before": 139800,
+      "after": 10400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 45,
+      "room": 2500,
+      "before": 153200,
+      "after": 11200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 50,
+      "room": 2500,
+      "before": 168000,
+      "after": 11600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 55,
+      "room": 2500,
+      "before": 184200,
+      "after": 16100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 60,
+      "room": 2500,
+      "before": 9400,
+      "after": 21100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 65,
+      "room": 2500,
+      "before": 4100,
+      "after": 28400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 70,
+      "room": 2500,
+      "before": 4200,
+      "after": 38800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 75,
+      "room": 2500,
+      "before": 4500,
+      "after": 55700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 80,
+      "room": 2500,
+      "before": 4700,
+      "after": 80900
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 85,
+      "room": 2500,
+      "before": 5000,
+      "after": 118800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 90,
+      "room": 2500,
+      "before": 5400,
+      "after": 130200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 95,
+      "room": 2500,
+      "before": 5600,
+      "after": 142700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 98,
+      "room": 2500,
+      "before": 7800,
+      "after": 156500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 15,
+      "room": 2500,
+      "before": 205300,
+      "after": 15500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 20,
+      "room": 2500,
+      "before": 46200,
+      "after": 9000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 25,
+      "room": 2500,
+      "before": 25100,
+      "after": 10000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 30,
+      "room": 2500,
+      "before": 12900,
+      "after": 10400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 35,
+      "room": 2500,
+      "before": 6300,
+      "after": 11200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 40,
+      "room": 2500,
+      "before": 6400,
+      "after": 11600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 45,
+      "room": 2500,
+      "before": 7000,
+      "after": 12600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 50,
+      "room": 2500,
+      "before": 7300,
+      "after": 13600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 55,
+      "room": 2500,
+      "before": 7700,
+      "after": 17700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 60,
+      "room": 2500,
+      "before": 8200,
+      "after": 22700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 65,
+      "room": 2500,
+      "before": 8600,
+      "after": 30700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 70,
+      "room": 2500,
+      "before": 11900,
+      "after": 42200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 75,
+      "room": 2500,
+      "before": 15600,
+      "after": 60700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 80,
+      "room": 2500,
+      "before": 20900,
+      "after": 88500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 85,
+      "room": 2500,
+      "before": 28700,
+      "after": 130100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 90,
+      "room": 2500,
+      "before": 41100,
+      "after": 142600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 95,
+      "room": 2500,
+      "before": 59700,
+      "after": 156400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 98,
+      "room": 2500,
+      "before": 87700,
+      "after": 171500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 15,
+      "room": 3500,
+      "before": 11500,
+      "after": 21400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 20,
+      "room": 3500,
+      "before": 16600,
+      "after": 10800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 25,
+      "room": 3500,
+      "before": 24000,
+      "after": 11000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 30,
+      "room": 3500,
+      "before": 36000,
+      "after": 12300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 35,
+      "room": 3500,
+      "before": 54000,
+      "after": 12900
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 40,
+      "room": 3500,
+      "before": 81000,
+      "after": 13400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 45,
+      "room": 3500,
+      "before": 89100,
+      "after": 14400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 50,
+      "room": 3500,
+      "before": 98100,
+      "after": 14900
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 55,
+      "room": 3500,
+      "before": 107900,
+      "after": 20700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 60,
+      "room": 3500,
+      "before": 13200,
+      "after": 27100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 65,
+      "room": 3500,
+      "before": 7800,
+      "after": 36600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 70,
+      "room": 3500,
+      "before": 8500,
+      "after": 50300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 75,
+      "room": 3500,
+      "before": 9100,
+      "after": 72400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 80,
+      "room": 3500,
+      "before": 9200,
+      "after": 105500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 85,
+      "room": 3500,
+      "before": 9500,
+      "after": 155300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 90,
+      "room": 3500,
+      "before": 10200,
+      "after": 170200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 95,
+      "room": 3500,
+      "before": 11100,
+      "after": 186600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 98,
+      "room": 3500,
+      "before": 14400,
+      "after": 204600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 15,
+      "room": 3500,
+      "before": 72900,
+      "after": 19500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 20,
+      "room": 3500,
+      "before": 107000,
+      "after": 12200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 25,
+      "room": 3500,
+      "before": 117200,
+      "after": 13200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 30,
+      "room": 3500,
+      "before": 128500,
+      "after": 13700
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 35,
+      "room": 3500,
+      "before": 140900,
+      "after": 14800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 40,
+      "room": 3500,
+      "before": 86700,
+      "after": 15200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 45,
+      "room": 3500,
+      "before": 43700,
+      "after": 16600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 50,
+      "room": 3500,
+      "before": 23000,
+      "after": 18000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 55,
+      "room": 3500,
+      "before": 11600,
+      "after": 23000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 60,
+      "room": 3500,
+      "before": 11700,
+      "after": 29600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 65,
+      "room": 3500,
+      "before": 13100,
+      "after": 40200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 70,
+      "room": 3500,
+      "before": 13700,
+      "after": 55500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 75,
+      "room": 3500,
+      "before": 14300,
+      "after": 80200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 80,
+      "room": 3500,
+      "before": 15300,
+      "after": 117300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 85,
+      "room": 3500,
+      "before": 15900,
+      "after": 172900
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 90,
+      "room": 3500,
+      "before": 22000,
+      "after": 189600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 95,
+      "room": 3500,
+      "before": 28900,
+      "after": 207900
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 98,
+      "room": 3500,
+      "before": 39000,
+      "after": 228100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 15,
+      "room": 4500,
+      "before": 10500,
+      "after": 25500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 20,
+      "room": 4500,
+      "before": 15200,
+      "after": 12800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 25,
+      "room": 4500,
+      "before": 22000,
+      "after": 13000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 30,
+      "room": 4500,
+      "before": 33000,
+      "after": 14500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 35,
+      "room": 4500,
+      "before": 49500,
+      "after": 15200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 40,
+      "room": 4500,
+      "before": 74200,
+      "after": 15800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 45,
+      "room": 4500,
+      "before": 81600,
+      "after": 17000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 50,
+      "room": 4500,
+      "before": 89800,
+      "after": 17600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 55,
+      "room": 4500,
+      "before": 98800,
+      "after": 24400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 60,
+      "room": 4500,
+      "before": 8500,
+      "after": 32100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 65,
+      "room": 4500,
+      "before": 4300,
+      "after": 43300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 70,
+      "room": 4500,
+      "before": 4600,
+      "after": 61800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 75,
+      "room": 4500,
+      "before": 4700,
+      "after": 85800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 80,
+      "room": 4500,
+      "before": 5300,
+      "after": 125100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 85,
+      "room": 4500,
+      "before": 5600,
+      "after": 184100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 90,
+      "room": 4500,
+      "before": 6100,
+      "after": 201800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 95,
+      "room": 4500,
+      "before": 6200,
+      "after": 221200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "M",
+      "ageBand": 98,
+      "room": 4500,
+      "before": 8500,
+      "after": 242600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 15,
+      "room": 4500,
+      "before": 96200,
+      "after": 23800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 20,
+      "room": 4500,
+      "before": 105300,
+      "after": 14800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 25,
+      "room": 4500,
+      "before": 115500,
+      "after": 16100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 30,
+      "room": 4500,
+      "before": 55600,
+      "after": 16600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 35,
+      "room": 4500,
+      "before": 28900,
+      "after": 17400
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 40,
+      "room": 4500,
+      "before": 15300,
+      "after": 18000
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 45,
+      "room": 4500,
+      "before": 7600,
+      "after": 19500
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 50,
+      "room": 4500,
+      "before": 7800,
+      "after": 21800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 55,
+      "room": 4500,
+      "before": 8600,
+      "after": 27200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 60,
+      "room": 4500,
+      "before": 9000,
+      "after": 35100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 65,
+      "room": 4500,
+      "before": 9400,
+      "after": 47600
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 70,
+      "room": 4500,
+      "before": 10100,
+      "after": 65800
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 75,
+      "room": 4500,
+      "before": 10500,
+      "after": 95200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 80,
+      "room": 4500,
+      "before": 14500,
+      "after": 139200
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 85,
+      "room": 4500,
+      "before": 19000,
+      "after": 205300
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 90,
+      "room": 4500,
+      "before": 25600,
+      "after": 225100
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 95,
+      "room": 4500,
+      "before": 35000,
+      "after": 246900
+    },
+    {
+      "id": "starterbalanced",
+      "sex": "F",
+      "ageBand": 98,
+      "room": 4500,
+      "before": 50200,
+      "after": 270900
+    }
+  ]
+}

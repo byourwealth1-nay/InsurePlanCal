@@ -55,7 +55,10 @@ for id,name,src,lo,hi,minimum,maximum,bands,values,disc in [
  add(id,name,'main',src,lo,hi,minimum=minimum,maximum=maximum,bands=bands,rates={'M':values,'F':values},discounts=disc,note='อัตราชายและหญิงเท่ากันตามตาราง · อายุ 0 ต้องมีอายุจริงอย่างน้อย 15 วัน' if lo==0 else ('ไม่สามารถแนบสัญญาเพิ่มเติมได้ ตาม Benefit Plus หน้า 46' if id=='5pay10' else ''))
 p='1TnO8I_8thH2ARse_qv24vMJC5LDFIBZM';t=D[p]['text']
 for mode,start,n,lo in [('begin','32,700',20,0),('balanced','9,400',18,11)]:
- offset=t.index('แบบ BEGIN') if mode=='begin' else t.index('แบบ BALANCED')
+ # Product-introduction headings occur before the premium table. Never anchor there.
+ headers=list(re.finditer(r'เบี้ยประกันภัยมาตรฐานราย.{0,8}แบบ\s+'+mode.upper(),t))
+ assert len(headers)==1,(mode,len(headers))
+ offset=headers[0].start()
  sub=t[offset:];sub=sub[sub.index(start):];v=[int(s.replace(',','')) for s in re.findall(r'\d{1,3}(?:,\d{3})+',sub)][:n*10];assert len(v)==n*10;c=[v[i:i+n] for i in range(0,n*10,n)]
  add('starter'+mode,'Health Starter · '+mode.title(),'health',p,lo,75,unit=0,bands=([5,10] if lo==0 else [])+[15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,98],plans=[dict(id=str(i),name=f'ค่าห้อง {room:,} บาท / วัน',rates={'M':c[[0,6,7,9,8][i]],'F':c[[1,2,3,5,4][i]]}) for i,room in enumerate([1500,2000,2500,3500,4500])],note='ตรวจความคุ้มครองและค่าใช้จ่ายร่วมตามเงื่อนไขแผน · อายุ 0 ต้องมีอายุจริงอย่างน้อย 15 วัน')
 p='1_ngAaphK5RgI1IcdUy7Q_9qHqndEJXZF';t=D[p]['text'];headers=list(re.finditer('เบี้ยประกันภัยมาตรฐานราย',t));assert len(headers)==3

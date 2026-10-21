@@ -4,6 +4,21 @@ const products=require('../data/products.json');
 const old=require('../data/legacy-rates.json');
 const byId=id=>products.find(p=>p.id===id);
 const q=(id,sex,age,amount,plan)=>quote(byId(id),{sex,age,amount,plan,infantConfirmed:true}).premium;
+// Independent row/column transcription from the printed Starter PDF, pages 8–9.
+const starterSource=require('./health-starter-source.json');
+let starterCells=0;
+for(const [id,expected] of Object.entries(starterSource.products)){
+ const p=byId(id);assert.deepEqual(p.bands,expected.bands);
+ for(const plan of expected.plans)for(const sex of ['M','F']){
+  assert.deepEqual(p.plans.find(x=>x.id===plan.id).rates[sex],plan.rates[sex]);
+  starterCells+=plan.rates[sex].length;
+ }
+}
+assert.equal(q('starterbalanced','F',35,undefined,'3'),14800);
+assert.equal(q('payplus20','F',35,150000)+q('starterbalanced','F',35,undefined,'3'),18349);
+assert.equal(q('starterbalanced','M',35,undefined,'3'),12900);
+assert.equal(q('starterbegin','F',35,undefined,'3'),13400);
+console.log(`PASS: ${starterCells} independently transcribed Starter rate cells and reported quote`);
 // Fixed examples from brochures / original quote. These check column order and unit conversions.
 assert.equal(q('payplus20','M',57,150000),8118);
 assert.equal(q('happy','M',57,undefined,'1'),42300);
