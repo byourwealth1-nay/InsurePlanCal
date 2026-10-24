@@ -35,7 +35,7 @@ function syncRiderOptions(){
  $('riderPolicy').textContent=!available?main.name+' ไม่สามารถแนบสัญญาเพิ่มเติมได้':main?.id.startsWith('annuity')?'แบบบำนาญนี้แนบได้เฉพาะ AI / ADD / ADB และ RCC':['cisuper10','cisuper20'].includes(main?.id)?'CI SuperCare แนบได้เฉพาะ AI / ADD / ADB และ RCC':['cisuperprestige10','cisuperprestige20'].includes(main?.id)?'CI SuperCare Prestige แนบได้เฉพาะอุบัติเหตุและ CI Plus':main?.id==='ciprocare'?'CI ProCare ไม่สามารถแนบ WP / WPCI / PB / PBCI ได้':'รายการที่เลือกได้กรองตามข้อจำกัดของกรมธรรม์หลักแล้ว';
  return removed;
 }
-function hint(p){return p?`อายุรับใหม่ ${p.minAge}–${p.maxAge} ปี${p.unit&&!p.waiverType?` · จำนวนเงินตั้งแต่ ${fmt(p.minAmount)}${p.maxAmount===null?'':` ถึง ${fmt(p.maxAmount)}`} บาท`:''}${p.note?' · '+p.note:''}`:'';}
+function hint(p){return p?`อายุรับใหม่ ${p.minAge}–${p.maxAge} ปี${p.unit&&!p.waiverType?` · ${p.amountLabel||'จำนวนเงิน'}ตั้งแต่ ${fmt(p.minAmount)}${p.maxAmount===null?'':` ถึง ${fmt(p.maxAmount)}`} ${p.amountSuffix||'บาท'}`:''}${p.note?' · '+p.note:''}`:'';}
 function riderItems(){return [...document.querySelectorAll('#riders .item')].map(node=>({node,p:product(node.querySelector('.rider-product').value),amount:getAmount(node.querySelector('.rider-amount')),plan:node.querySelector('.rider-plan').value,payerSex:node.querySelector('.payer-sex').value,payerAge:getAmount(node.querySelector('.payer-age'))})).filter(i=>i.p);}
 function addRider(id='',initialAmount,initialPlan){
  const node=document.createElement('div');node.className='item';const n=++riderCounter;
@@ -45,8 +45,8 @@ function addRider(id='',initialAmount,initialPlan){
   const p=product(select.value),oldAmount=getAmount(input),oldId=node.dataset.product;node.dataset.product=p?.id||'';
   const plans=node.querySelector('.rider-plan');plans.replaceChildren();p?.plans?.forEach(x=>plans.append(option(x.id,x.name)));node.querySelector('.rider-plan-row').classList.toggle('hide',!p?.plans);
   node.querySelector('.amount-row').classList.toggle('hide',!p||(!p.unit&&!p.quoteMode));node.querySelector('.payer-row').classList.toggle('hide',p?.waiverType!=='payer');
-  const label=node.querySelector('.amount-label');label.textContent=p?.quoteMode==='manual'?'เบี้ย WP / ปี จากใบเสนอขายบริษัท (บาท)':p?.waiverType?'เบี้ยหลักต่อปี (คำนวณอัตโนมัติ)':p?.id==='citopup'?'ทุน CI Topup = 40% ของ CI Plus (บาท)':['hb','hbextra'].includes(p?.id)?'ค่าชดเชยรายวัน (บาท)':'ทุนประกัน (บาท)';
-  input.readOnly=!!p?.waiverType||p?.id==='citopup';input.value=p?.quoteMode==='manual'?'':p?.unit?fmt(['hb','hbextra'].includes(p.id)?1000:Math.max(p.minAmount,100000)):'';
+  const label=node.querySelector('.amount-label');label.textContent=p?.amountLabel?p.amountLabel:p?.quoteMode==='manual'?'เบี้ย WP / ปี จากใบเสนอขายบริษัท (บาท)':p?.waiverType?'เบี้ยหลักต่อปี (คำนวณอัตโนมัติ)':p?.id==='citopup'?'ทุน CI Topup = 40% ของ CI Plus (บาท)':['hb','hbextra'].includes(p?.id)?'ค่าชดเชยรายวัน (บาท)':'ทุนประกัน (บาท)';
+  input.readOnly=!!p?.waiverType||p?.id==='citopup';input.value=p?.quoteMode==='manual'?'':p?.unit?fmt(p.defaultAmount??(['hb','hbextra'].includes(p.id)?1000:Math.max(p.minAmount,100000))):'';
   node.querySelector('.rider-hint').textContent=hint(p);node.querySelector('.linked-hint').textContent='';
   if(p?.id==='citopup'&&!riderItems().some(i=>i.p.id==='ciplus'))addRider('ciplus',oldId==='ciplus'&&Number.isFinite(oldAmount)?oldAmount:100000);
   update();
@@ -76,7 +76,7 @@ function update(){
  for(const item of items){
   let text='—',description=item.p.name;
   if(ids.has(item.p.id))errors.push(item.p.name+': เลือกซ้ำ กรุณารวมทุนในรายการเดียว');ids.add(item.p.id);
-  if(item.p.unit&&!item.p.waiverType)description+=' · '+(Number.isFinite(item.amount)?fmt(item.amount):'—')+' บาท';if(item.p.plans)description+=' · '+(item.p.plans.find(p=>p.id===item.plan)?.name||'กรุณาเลือกแผน');
+  if(item.p.unit&&!item.p.waiverType)description+=' · '+(Number.isFinite(item.amount)?fmt(item.amount):'—')+' '+(item.p.amountSuffix||'บาท');if(item.p.plans)description+=' · '+(item.p.plans.find(p=>p.id===item.plan)?.name||'กรุณาเลือกแผน');
   try{
    const q=InsureCalculator.quote(item.p,{sex,age,infantConfirmed,amount:item.amount,plan:item.plan,payerSex:item.payerSex,payerAge:item.payerAge,main,mainAmount,manualPremium:item.p.quoteMode==='manual'?item.amount:undefined});
    text=fmt(q.premium)+' บาท';cents+=Math.round(q.premium*100);

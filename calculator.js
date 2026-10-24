@@ -44,7 +44,7 @@ function quote(product,{sex,age,amount,plan,infantConfirmed=false,payerSex,payer
  if(!Number.isFinite(rate)||rate<=0)throw Error('ตารางอัตราไม่ครบ ยังไม่สามารถคำนวณได้');
  let discount=0,raw=rate;
  if(product.unit){
-  if(!Number.isSafeInteger(amount)||amount<product.minAmount||(product.maxAmount!==null&&amount>product.maxAmount)||amount%product.step!==0)throw Error(`${product.name}: จำนวนเงินต้องเป็นจำนวนเต็ม ตั้งแต่ ${product.minAmount.toLocaleString('th-TH')}${product.maxAmount===null?'':` ถึง ${product.maxAmount.toLocaleString('th-TH')}`} บาท${product.step>1?` และเป็นหน่วยละ ${product.step.toLocaleString('th-TH')} บาท`:''}`);
+  if(!Number.isSafeInteger(amount)||amount<product.minAmount||(product.maxAmount!==null&&amount>product.maxAmount)||amount%product.step!==0)throw Error(`${product.name}: ${product.amountLabel||'จำนวนเงิน'}ต้องเป็นจำนวนเต็ม ตั้งแต่ ${product.minAmount.toLocaleString('th-TH')}${product.maxAmount===null?'':` ถึง ${product.maxAmount.toLocaleString('th-TH')}`} ${product.amountSuffix||'บาท'}${product.step>1?` และเป็นหน่วยละ ${product.step.toLocaleString('th-TH')} บาท`:''}`);
   discount=product.discounts.find(([threshold])=>amount>=threshold)?.[1]||0;
   raw=(rate-discount)*amount/product.unit;
  }

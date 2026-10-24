@@ -277,9 +277,9 @@ DISCOUNTS={
  'cisuperprestige10':[[5000000,3.5]],'cisuperprestige20':[[5000000,2]],
  'protector70':[[1500000,1.5]],'protector80':[[1500000,1.5]],
 }
-FLAT={'happy','saver','herobegin','herobalanced','starterbegin','starterbalanced','infinite','hs','hsextra','happykids','healthcancer','wp'}
+FLAT={'happy','saver','herobegin','herobalanced','starterbegin','starterbalanced','infinite','hs','hsextra','happykids','wp'}
 for id,e in EXPECTED.items():
-    e['unit']=0 if id in FLAT else 100 if id in ['pb','pbci','hb','hbextra'] else 100000 if id=='cancer' else 1000
+    e['unit']=10 if id=='healthcancer' else 0 if id in FLAT else 100 if id in ['pb','pbci','hb','hbextra'] else 100000 if id=='cancer' else 1000
     e['discounts']=DISCOUNTS.get(id,[])
     e['source']=P[id]['source']
 assert set(EXPECTED)==set(P),('Not all products audited',set(P)-set(EXPECTED))

@@ -120,9 +120,9 @@ assert.equal(paymentTerm(byId('protector80'),57),23);
 assert.equal(quote(byId('wp'),{sex:'M',age:35,manualPremium:0}).premium,0);
 assert.equal(quote(byId('wp'),{sex:'F',age:35,manualPremium:99.12}).premium,99.12);
 for(const manualPremium of [undefined,NaN,-1,Infinity,1.001])assert.throws(()=>quote(byId('wp'),{sex:'M',age:35,manualPremium}));
-assert.equal(q('healthcancer','M',57,undefined,'standard'),11167);
-assert.equal(q('healthcancer','F',67,undefined,'nonsmoker'),17500);
-assert.equal(q('healthcancer','M',35,undefined,'nonsmoker'),1314);
+assert.equal(q('healthcancer','M',57,10,'standard'),11167);
+assert.equal(q('healthcancer','F',67,10,'nonsmoker'),17500);
+assert.equal(q('healthcancer','M',35,10,'nonsmoker'),1314);
 for(const amount of [100000,250000,500000])assert.equal(linkedAmount(byId('citopup'),[{p:byId('ciplus'),amount}]),amount*.4);
 assert.throws(()=>linkedAmount(byId('citopup'),[]));
 assert.throws(()=>linkedAmount(byId('citopup'),[{p:byId('ciplus'),amount:NaN}]));
@@ -162,3 +162,12 @@ for(const id of ['cisuper10','cisuper20','cisuperprestige10','cisuperprestige20'
  }
 }
 console.log('PASS: SuperCare and Prestige explicit rider allowlists');
+
+// Health Cancer stores the printed 10-unit rate and scales editable whole units.
+for(const sex of ['M','F'])for(const plan of ['standard','nonsmoker'])for(let age=0;age<=70;age++){
+ const ten=q('healthcancer',sex,age,10,plan);
+ for(const units of [1,5,10,15,20])assert.equal(q('healthcancer',sex,age,units,plan),Math.round((ten*units/10+Number.EPSILON)*100)/100);
+}
+for(const amount of [undefined,NaN,0,-1,1.5,Infinity])assert.throws(()=>q('healthcancer','M',35,amount,'standard'),/จำนวนหน่วย/);
+assert.equal(q('healthcancer','M',35,5,'standard'),730);
+assert.equal(q('healthcancer','M',35,20,'nonsmoker'),2628);

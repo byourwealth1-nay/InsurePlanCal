@@ -40,7 +40,7 @@ add('wpci','WPCI',16,75,unit=1000,waiverType='insured',waiverRates=rates,note='�
 add('wp','WP (กรอกเบี้ยจากบริษัท)',16,55,unit=0,quoteMode='manual',note='เอกสารไม่มีตารางเบี้ย WP · กรอกเบี้ยตามใบเสนอขายบริษัท รวมถึง 0 บาทเมื่อบริษัทระบุว่าไม่มีเบี้ยเพิ่ม')
 src='13BESkX_p1pAj3cLlvAmvCA3eCm-tKfdE'
 m=[730,1460,2443,3616,5255,7768,11167,15280,30000,39000,48000];f=m[:8]+[17500,23000,28500];nm=[730,1314,2199,3254,4729,6991,10050,13752]+m[8:];nf=nm[:8]+f[8:]
-p=add('healthcancer','Health Cancer · 10 หน่วย',0,70,unit=0,bands=[15,35,40,45,50,55,60,65,70,75,79],plans=[{'id':'standard','name':'10 หน่วย · มาตรฐาน / สูบบุหรี่','rates':{'M':m,'F':f}},{'id':'nonsmoker','name':'10 หน่วย · ไม่สูบบุหรี่ตามเกณฑ์บริษัท','rates':{'M':nm,'F':nf}}],note='ตารางเบี้ย 10 หน่วยตามคู่มือ · แผนไม่สูบบุหรี่ใช้อัตราที่พิมพ์ในตาราง อายุ 16–65 ปี');p['source']={'title':D[src]['title'],'url':D[src]['url']}
+p=add('healthcancer','Health Cancer',0,70,unit=10,minAmount=1,amountLabel='จำนวนหน่วย',amountSuffix='หน่วย',defaultAmount=10,bands=[15,35,40,45,50,55,60,65,70,75,79],plans=[{'id':'standard','name':'มาตรฐาน / สูบบุหรี่','rates':{'M':m,'F':f}},{'id':'nonsmoker','name':'ไม่สูบบุหรี่ตามเกณฑ์บริษัท','rates':{'M':nm,'F':nf}}],note='คำนวณตามจำนวนหน่วยที่กรอก จากตารางเบี้ยต่อ 10 หน่วย · จำนวนหน่วยที่รับได้ต้องตรวจเกณฑ์บริษัท · แผนไม่สูบบุหรี่ใช้อัตราที่พิมพ์ในตาราง อายุ 16–65 ปี');p['source']={'title':D[src]['title'],'url':D[src]['url']}
 fixed={'payplus10':10,'payplus15':15,'payplus20':20,'pay10':10,'pay15':15,'pay20':20,'protection65':10,'savingsure':10,'endowment':15,'excellent':20,'5pay10':5,'annuitysure9':9}
 for p in P:
  if p['id'] in fixed:p['paymentYears']=fixed[p['id']]
